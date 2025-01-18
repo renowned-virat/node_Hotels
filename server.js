@@ -4,12 +4,12 @@ const db= require('./db')
 const bodyParser=require('body-parser');
 app.use(bodyParser.json());//req.body will store the obj
 
-const Person=require('./models/Person');
-const MenuItem =require('./models/MenuItem');
+
+
 const personRoute=require('./routes/personRoutes')
 const menuRoutes=require('./routes/menuRoutes')
-app.use('/',personRoute);
-app.use('/',menuRoutes)
+app.use('/person',personRoute);
+app.use('/menu',menuRoutes)
 
 
 

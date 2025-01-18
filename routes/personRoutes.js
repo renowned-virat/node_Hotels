@@ -1,7 +1,7 @@
 const express= require('express');
 const router= express.Router();
-
-router.post('/person',async(req,res,next)=>{
+const Person=require('../models/Person');
+router.post('/',async(req,res,next)=>{
     try {
         const data= req.body;
         const newPerson= Person(data);
@@ -18,7 +18,7 @@ router.post('/person',async(req,res,next)=>{
 })
 
 //get method to get the person
-router.get('/person',async(req,res)=>{
+router.get('/',async(req,res)=>{
     try {
         const data= await Person.find();
         console.log('data fetched successfully.')

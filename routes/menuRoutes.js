@@ -1,8 +1,8 @@
 const express=require('express');
 const menuRoutes=express.Router();
+const MenuItem =require('../models/MenuItem');
 
-
-menuRoutes.get('/menu',async(req,res)=>{
+menuRoutes.get('/',async(req,res)=>{
     try {
         const response=await MenuItem.find();
         console.log('data fetched success.')
@@ -12,7 +12,7 @@ menuRoutes.get('/menu',async(req,res)=>{
         res.status(500).json({error:'internal server error'})
     }
 })
-menuRoutes.post('/menu',async(req,res)=>{
+menuRoutes.post('/',async(req,res)=>{
     try {
         const data=req.body;
         const Item=new MenuItem(data);
@@ -24,7 +24,7 @@ menuRoutes.post('/menu',async(req,res)=>{
     }
 })
 
-menuRoutes.get('/menu/:tastetype',async(req,res)=>{
+menuRoutes.get('/:tastetype',async(req,res)=>{
     try {
         const tastetype=req.params.tastetype;
         if(tastetype=='spicy'|| tastetype=='sour'||tastetype=='sweet'){
