@@ -2,3 +2,4 @@
 node_modules/
 
 #ignore other files and folders
+.env
