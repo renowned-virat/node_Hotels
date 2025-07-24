@@ -140,7 +140,7 @@ com2.RS-232.LoopbackType=Type2
 ```mermaid
 flowchart TD
 
-    A[Check Driver Loaded] --No-> B[CDM Exception 020472]
+    A[Check Driver Loaded] -- No -> B[CDM Exception 020472]
     A --> C[Load Parameter DeviceID/TestRepeat]
     C --> D[Set DataCollection Title]
     D --> E{Check is WinPE}
